@@ -1,0 +1,27 @@
+---
+title: "John Mannion Homework 3"
+description: |
+  Homework 3 - Discussion of the USArrests data set and a small renaming of the columns for clarity. 
+author:
+  - name: John Mannion
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+```{r}
+Crime <- USArrests %>%
+ rename(
+    UrbanPop = Urban.Percent,
+    Murder = Murder.Rate
+    )
+```
+
+This data set details the number of arrests per 100,000 residents in a state for murder, assault, and rape in the year 1973. It also lists the percentage of the population that lives in urban areas ("UrbanPop"). This is no missing data for any of these values. 
+
+I renamed two of the variables in the data set, UrbanPop and Murder, to make more clear what each number represented. UrbanPop became Urban.Percent, and Murder became Murder.Rate.
