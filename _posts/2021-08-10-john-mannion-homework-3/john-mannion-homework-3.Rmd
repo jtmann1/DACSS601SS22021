@@ -17,11 +17,14 @@ library(tidyverse)
 ```{r}
 Crime <- USArrests %>%
  rename(
-    UrbanPop = Urban.Percent,
-    Murder = Murder.Rate
+    Urban.Percent = UrbanPop,
+    Murder.Rate = Murder,
+    Assault.Rate = Assault,
+    Rape.Rate = Rape
     )
 ```
 
-This data set details the number of arrests per 100,000 residents in a state for murder, assault, and rape in the year 1973. It also lists the percentage of the population that lives in urban areas ("UrbanPop"). This is no missing data for any of these values. 
+This data set details the number of arrests per 100,000 residents in a state for murder, assault, and rape in the year 1973. It also lists the percentage of the population that lives in urban areas ("UrbanPop"). There is no missing data for any of these values. 
 
-I renamed two of the variables in the data set, UrbanPop and Murder, to make more clear what each number represented. UrbanPop became Urban.Percent, and Murder became Murder.Rate.
+I renamed the variables in the data set to make more clear what each number represented. "UrbanPop" became "Urban.Percent", "Murder" became "Murder.Rate", 'Rape" became "Rape.Rate", and "Assault" became "Assault.Rate".
+

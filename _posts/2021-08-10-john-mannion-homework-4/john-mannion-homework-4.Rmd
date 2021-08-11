@@ -16,9 +16,9 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
-```{r data viz, }
+```{r data viz}
 ggplot(USArrests, aes(x=UrbanPop, y=Murder))+
    geom_point() +
-   labs(title = "Comparison of the Murder Rate and Proportion of Urban Population in All 50 States", x =  "Percent of Residents in Urban Area", y = "Murders per 100,000 Residents", )
+   labs(title = "Comparison of the Murder Rate and Proportion of Urban Population in All 50 States", x =  "Percent of Residents in Urban Area", y = "Murders per 100,000 Residents")
 ```
 This is a scatterplot showing the relationship between the urban population and the murder rate in all 50 states. I chose this type of graph to show the presence of a trend between the urban percentage and the murder rate or lack thereof. No other type of graph would have shown this relationship more effectively. Given the simplicity of this question and the data, I was able to do everything I wanted to display the relationship. 

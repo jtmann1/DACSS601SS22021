@@ -1,0 +1,57 @@
+---
+title: "John Mannion Homework 5"
+description: |
+  A short description of the post.
+author:
+  - name: John Mannion
+date: 08-11-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+## Description of the Variables
+This data set details the number of arrests per 100,000 residents in a state for murder, assault, and rape in the year 1973. It also lists the percentage of the population that lives in urban areas ("UrbanPop"). There is no missing data for any of these values, and the data set is already properly cleaned and formatted. 
+
+##Renaming Variables
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+```
+```{r}
+Crime <- USArrests %>%
+ rename(
+    Urban.Percent = UrbanPop,
+    Murder.Rate = Murder,
+    Assault.Rate = Assault,
+    Rape.Rate = Rape
+    )
+```
+
+I renamed the variables in the data set to make more clear what each number represented. "UrbanPop" became "Urban.Percent", "Murder" became "Murder.Rate", 'Rape" became "Rape.Rate", and "Assault" became "Assault.Rate".
+
+## Hypothesis
+I hypothesize that the percentage of urban residents in a state will increase the rate of all crimes in that state. 
+
+## Visualizations
+
+```{r, initial data visualization}
+ggplot(Crime, aes(x=Urban.Percent, y=Rape.Rate))+
+   geom_point() +
+   labs(title = "Comparison of the Rape Rate and Proportion of Urban Population in All 50 States", x = "Percent of Residents in Urban Area", y = "Rapes per 100,000 Residents")
+```
+
+
+
+```{r}
+ggplot(Crime, aes(x=Urban.Percent, y=Murder.Rate))+
+   geom_point() +
+   labs(title = "Comparison of the Murder Rate and Proportion of Urban Population in All 50 States", x =  "Percent of Residents in Urban Area", y = "Murders per 100,000 Residents")
+```
+
+```{r}
+ggplot(Crime, aes(x=Urban.Percent, y=Assault.Rate))+
+   geom_point() +
+   labs(title = "Comparison of the Assault Rate and Proportion of Urban Population in All 50 States", x =  "Percent of Residents in Urban Area", y = "Assaults per 100,000 Residents")
+```
